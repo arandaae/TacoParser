@@ -9,7 +9,7 @@ namespace LoggingKata
     {
         static readonly ILog logger = new TacoLogger();
         const string csvPath = "TacoBell-US-AL.csv";
-
+        // add in meters to miles
         static void Main(string[] args)
         {
             // TODO:  Find the two Taco Bells that are the furthest from one another.
@@ -57,6 +57,7 @@ namespace LoggingKata
             {
                 var locA = locations[i];
                 var corA = new GeoCoordinate();
+
                 corA.Latitude = locA.Location.Latitude;
                 corA.Longitude = locA.Location.Longitude;
 
@@ -64,6 +65,7 @@ namespace LoggingKata
                 {
                     var locB = locations[x];
                     var corB = new GeoCoordinate();
+
                     corB.Latitude = locB.Location.Latitude;
                     corB.Longitude = locB.Location.Longitude;
 
@@ -76,7 +78,9 @@ namespace LoggingKata
                 }
             }
 
-            logger.LogInfo($"{tacobell1.Name} and {tacobell2.Name} are the farthest apart.");
+            Console.WriteLine($"{tacobell1.Name} and {tacobell2.Name} are the farthest apart.");
+            //logger.LogInfo($"{tacobell1.Name} and {tacobell2.Name} are the farthest apart.");
+
             // Done: Create a new corA Coordinate with your locA's lat and long
 
             // Done: Now, do another loop on the locations with the scope of your first loop, so you can grab the "destination" location (perhaps: `locB`)
