@@ -18,7 +18,7 @@
             if (cells.Length < 3)
             {
                 // Log that and return null
-                logger.LogWarning("less than three items. incomplete data");
+                logger.LogWarning("There are less than three items, data is incomplete.");
                 // Do not fail if one record parsing fails, return null
                 return null; // TODO Implement
             }
